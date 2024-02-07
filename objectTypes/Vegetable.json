@@ -1,0 +1,112 @@
+{
+	"name": "Vegetable",
+	"plugin-id": "Sprite",
+	"sid": 153594216369234,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 712044401098472
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 224,
+						"height": 224,
+						"originX": 0.5267857142857143,
+						"originY": 0.4732142857142857,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 100554,
+						"collisionPoly": {
+							"points": [
+								0.3203125,
+								0.19921875,
+								0.4921875,
+								0.2578125,
+								0.53125,
+								0.296875,
+								0.80078125,
+								0.8046875,
+								0.328125,
+								0.77734375,
+								0.203125,
+								0.7109375,
+								0.14453125,
+								0.57421875,
+								0.15625,
+								0.3671875,
+								0.203125,
+								0.265625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 721298735475935,
+				"name": "fresh",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 224,
+						"height": 224,
+						"originX": 0.5267857142857143,
+						"originY": 0.4732142857142857,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6541886,
+						"collisionPoly": {
+							"points": [
+								0.3203125,
+								0.19921875,
+								0.4921875,
+								0.2578125,
+								0.53125,
+								0.296875,
+								0.80078125,
+								0.8046875,
+								0.328125,
+								0.77734375,
+								0.203125,
+								0.7109375,
+								0.14453125,
+								0.57421875,
+								0.15625,
+								0.3671875,
+								0.203125,
+								0.265625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 268406180775135,
+				"name": "stale",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

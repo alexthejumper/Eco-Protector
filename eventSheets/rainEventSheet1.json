@@ -1,0 +1,768 @@
+{
+	"name": "rainEventSheet1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "selectedRandomWidth",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 880745733444299
+		},
+		{
+			"eventType": "variable",
+			"name": "selectedGravity",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 978685805314136
+		},
+		{
+			"eventType": "variable",
+			"name": "gravityNumbers",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 833155660935168
+		},
+		{
+			"eventType": "variable",
+			"name": "dropletCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 655676212473076
+		},
+		{
+			"eventType": "variable",
+			"name": "dropletGoal",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 824705725048435
+		},
+		{
+			"eventType": "variable",
+			"name": "seconds",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 919245715710973
+		},
+		{
+			"eventType": "variable",
+			"name": "vegetableCollision",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 348525391309987
+		},
+		{
+			"eventType": "variable",
+			"name": "dChanged",
+			"type": "string",
+			"initialValue": "\"no\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 617439244865030
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 737583759430891
+				}
+			],
+			"actions": [
+				{
+					"id": "set-world-gravity",
+					"objectClass": "Raindrop",
+					"sid": 845154042526479,
+					"behaviorType": "Physics",
+					"parameters": {
+						"gravity": "5"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 385803609957343,
+					"parameters": {
+						"variable": "selectedRandomWidth",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 206371783728215,
+					"parameters": {
+						"variable": "selectedGravity",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 750877582078516,
+					"parameters": {
+						"variable": "gravityNumbers",
+						"value": "10"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 118371002432578,
+					"parameters": {
+						"variable": "dropletCount",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 138547304937477,
+					"parameters": {
+						"variable": "dropletGoal",
+						"value": "20"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 317647512014805,
+					"parameters": {
+						"variable": "seconds",
+						"value": "10"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 252867537998417,
+					"parameters": {
+						"variable": "vegetableCollision",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "FadeBlack",
+					"sid": 378888381830260,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "FadeBlack",
+					"sid": 834888554082982,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"fadein\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "3",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "0"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Cloud",
+					"sid": 776569338279084,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "0"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Cloud",
+					"sid": 442574318336377,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "20"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Cloud3",
+					"sid": 791651127703227,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "0"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Cloud3",
+					"sid": 349317631983282,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "100"
+					}
+				}
+			],
+			"sid": 381316747877671
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 295685448777899,
+					"parameters": {
+						"interval-seconds": "seconds"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 117337117389317
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 458063778095499
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "testing",
+					"sid": 522054773135005,
+					"parameters": {
+						"text": "\"Drops: \" & dropletCount"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "timeText",
+					"sid": 255913103300228,
+					"parameters": {
+						"text": "\"Time: \"&dChanged"
+					}
+				}
+			],
+			"sid": 492848189023118
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "Raindrop",
+					"sid": 101234624410631,
+					"parameters": {
+						"comparison": 4,
+						"y-co-ordinate": "WindowHeight"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 482993964591720,
+					"parameters": {
+						"object-to-create": "Splash",
+						"layer": "\"sliderLayer\"",
+						"x": "Raindrop.X",
+						"y": "Raindrop.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-rate",
+					"objectClass": "Splash",
+					"sid": 773349221514007,
+					"parameters": {
+						"rate": "random(1,3)"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Raindrop",
+					"sid": 625251498821287
+				}
+			],
+			"sid": 131836719413495
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Raindrop",
+					"sid": 617130611995945,
+					"parameters": {
+						"object": "Ground"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 642195065587935,
+					"parameters": {
+						"object-to-create": "Splash",
+						"layer": "\"sliderLayer\"",
+						"x": "Raindrop.X",
+						"y": "Raindrop.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-rate",
+					"objectClass": "Splash",
+					"sid": 509190063005385,
+					"parameters": {
+						"rate": "random(1,3)"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Raindrop",
+					"sid": 142013942273869
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 779977231377162,
+					"parameters": {
+						"variable": "dropletCount",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 342093411347277
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Raindrop",
+					"sid": 665415519137807,
+					"parameters": {
+						"object": "Vegetable"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Vegetable",
+					"sid": 272431259407420,
+					"parameters": {
+						"animation": "\"stale\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Raindrop",
+					"sid": 885635914748344
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 812634918812310,
+					"parameters": {
+						"variable": "vegetableCollision",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 151064186767198
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 385147094295953,
+					"parameters": {
+						"variable": "vegetableCollision",
+						"comparison": 0,
+						"value": "6"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 753984502012386
+				}
+			],
+			"sid": 683046648084867
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 198733346861524,
+					"parameters": {
+						"variable": "dropletCount",
+						"comparison": 0,
+						"value": "dropletGoal"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 942459270831631,
+					"parameters": {
+						"variable": "dropletGoal",
+						"value": "20"
+					}
+				},
+				{
+					"id": "set-world-gravity",
+					"objectClass": "Raindrop",
+					"sid": 863679617664097,
+					"behaviorType": "Physics",
+					"parameters": {
+						"gravity": "gravityNumbers"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 217907794494725,
+					"parameters": {
+						"variable": "seconds",
+						"value": "0.5"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 304784665864538,
+					"parameters": {
+						"variable": "gravityNumbers",
+						"value": "5"
+					}
+				}
+			],
+			"sid": 810496132494811
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-drop",
+					"objectClass": "Ground",
+					"sid": 806964278948617,
+					"behaviorType": "DragDrop"
+				},
+				{
+					"id": "is-dragging",
+					"objectClass": "Ground",
+					"sid": 751762353727828,
+					"behaviorType": "DragDrop"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "Ground",
+					"sid": 815564716245198,
+					"parameters": {
+						"x": "clamp(Ground.X, 50,  1150)",
+						"y": "400"
+					}
+				}
+			],
+			"sid": 581218736902928,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Cloud",
+					"sid": 526867367499928,
+					"parameters": {
+						"comparison": 4,
+						"x-co-ordinate": "1000"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Cloud",
+					"sid": 772826861612994,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "180"
+					}
+				},
+				{
+					"id": "set-flipped",
+					"objectClass": "Cloud",
+					"sid": 537377232426160,
+					"parameters": {
+						"state": "flipped"
+					}
+				}
+			],
+			"sid": 151504463809155
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Cloud",
+					"sid": 677700748191360,
+					"parameters": {
+						"comparison": 2,
+						"x-co-ordinate": "150"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Cloud",
+					"sid": 563050679626841,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "0"
+					}
+				},
+				{
+					"id": "set-flipped",
+					"objectClass": "Cloud",
+					"sid": 623709383588096,
+					"parameters": {
+						"state": "not-flipped"
+					}
+				}
+			],
+			"sid": 813355011145508
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Cloud3",
+					"sid": 550170482005189,
+					"parameters": {
+						"comparison": 4,
+						"x-co-ordinate": "1000"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Cloud3",
+					"sid": 302796075800862,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "180"
+					}
+				},
+				{
+					"id": "set-flipped",
+					"objectClass": "Cloud3",
+					"sid": 483755056580792,
+					"parameters": {
+						"state": "flipped"
+					}
+				}
+			],
+			"sid": 880351021239604
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Cloud3",
+					"sid": 315287309675708,
+					"parameters": {
+						"comparison": 2,
+						"x-co-ordinate": "150"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Cloud3",
+					"sid": 389884085643903,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "0"
+					}
+				},
+				{
+					"id": "set-flipped",
+					"objectClass": "Cloud3",
+					"sid": 348467131229412,
+					"parameters": {
+						"state": "not-flipped"
+					}
+				}
+			],
+			"sid": 105602631601258
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Cloud",
+					"sid": 333095280061459,
+					"parameters": {
+						"object": "Cloud3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 393161201914972,
+					"parameters": {
+						"object-to-create": "Raindrop",
+						"layer": "\"cloudsLayer\"",
+						"x": "Cloud.X",
+						"y": "Cloud.Y + Cloud.Height/2",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 934267216613959,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 393337965661606,
+					"parameters": {
+						"object-to-create": "Raindrop",
+						"layer": "\"cloudsLayer\"",
+						"x": "Cloud.X",
+						"y": "Cloud.Y + Cloud.Height/2",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 998491423109512,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 557171659873136,
+					"parameters": {
+						"object-to-create": "Raindrop",
+						"layer": "\"cloudsLayer\"",
+						"x": "Cloud.X",
+						"y": "Cloud.Y + Cloud.Height/2",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 375699924633928,
+					"parameters": {
+						"seconds": "12"
+					}
+				}
+			],
+			"sid": 219095036847274
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Cloud",
+					"sid": 849793336672583,
+					"parameters": {
+						"object": "Bar"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 641987116420450,
+					"parameters": {
+						"object-to-create": "Raindrop",
+						"layer": "\"cloudsLayer\"",
+						"x": "Cloud.X",
+						"y": "Cloud.Y + Cloud.Height/2",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 379498834143073,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				}
+			],
+			"sid": 311197546025634
+		}
+	],
+	"sid": 278394152856153
+}

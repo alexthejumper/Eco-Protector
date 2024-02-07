@@ -1,0 +1,105 @@
+{
+	"name": "waterEventSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 553018251652591
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "cannon",
+					"sid": 330570368945294,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				}
+			],
+			"sid": 606999910275656
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "mouse-button-is-down",
+					"objectClass": "Mouse",
+					"sid": 683774988951409,
+					"parameters": {
+						"mouse-button": "left"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "cannon",
+					"sid": 393140228551969,
+					"parameters": {
+						"object": "Sprite",
+						"layer": "0",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "apply-impulse-at-angle",
+					"objectClass": "Sprite",
+					"sid": 152895929500463,
+					"behaviorType": "Physics",
+					"parameters": {
+						"impulse": "distance(Self.X, Self.Y, Mouse.X, Mouse.Y) / 50000",
+						"angle": "cannon.Angle",
+						"image-point": "0"
+					}
+				}
+			],
+			"sid": 450508852536765
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 481913105034734
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 413999388591240,
+					"parameters": {
+						"layer": "\"dialogueLayer\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 484993973714990,
+					"parameters": {
+						"seconds": "10"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 961072147103994,
+					"parameters": {
+						"layer": "\"dialogueLayer\"",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 272192919964788
+		}
+	],
+	"sid": 159038589447732
+}
