@@ -3,7 +3,15 @@
 	"plugin-id": "Sprite",
 	"sid": 616691107415587,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "tree3Life",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 210796820923950
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {

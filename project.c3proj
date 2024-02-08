@@ -42,6 +42,13 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "googleplay",
+			"name": "Google Play",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Bullet",
 			"name": "Bullet",
@@ -108,7 +115,7 @@
 			"rocks",
 			"seed",
 			"Splash",
-			"Sprite",
+			"waterDroplet",
 			"Sprite2",
 			"testing",
 			"Text",
@@ -116,7 +123,26 @@
 			"Touch",
 			"tree3",
 			"Vegetable",
-			"vertical"
+			"vertical",
+			"GooglePlay",
+			"purpleTree",
+			"orangeTree",
+			"greenTree",
+			"redTree",
+			"spineTree",
+			"mediumDryTree",
+			"Sprite9",
+			"smallDryTree",
+			"staticCloud",
+			"darkLayer",
+			"winddirection",
+			"woodBox",
+			"pesticideParticle",
+			"navigation",
+			"Text2",
+			"trigger",
+			"windDirectionText",
+			"countDownText"
 		],
 		"subfolders": []
 	},
@@ -132,7 +158,9 @@
 			"waterLayout",
 			"rainLayout1",
 			"rainLayout2",
-			"rainLayout3"
+			"rainLayout3",
+			"projectileLayout2",
+			"waterLayout2"
 		],
 		"subfolders": []
 	},
@@ -142,7 +170,8 @@
 			"rainEventSheet1",
 			"rainEventSheet2",
 			"rainEventSheet3",
-			"waterEventSheet"
+			"waterEventSheet",
+			"waterEventSheet2"
 		],
 		"subfolders": []
 	},

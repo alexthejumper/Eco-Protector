@@ -1,14 +1,14 @@
 {
-	"name": "Sprite",
+	"name": "woodBox",
 	"plugin-id": "Sprite",
-	"sid": 804418602248207,
+	"sid": 636896810257427,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Physics",
 			"name": "Physics",
-			"sid": 541416468106769
+			"sid": 689918897722273
 		}
 	],
 	"effectTypes": [],
@@ -17,24 +17,24 @@
 			{
 				"frames": [
 					{
-						"width": 168,
-						"height": 169,
-						"originX": 0.5297619047619049,
-						"originY": 0.4970414201183432,
+						"width": 47,
+						"height": 47,
+						"originX": 0,
+						"originY": 0,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6898479,
+						"imageSpriteId": 936300,
 						"collisionPoly": {
 							"points": [
-								0.42499996366955,
-								0.4485205926838711,
-								0.5392855689639139,
-								0.44733731422198586,
-								0.5392855689639136,
-								0.5384614481728458,
-								0.421428680419922,
-								0.5408284565400794
+								0.02127659574468085,
+								0.02127659574468085,
+								0.9787234042553191,
+								0.02127659574468085,
+								0.9787234042553191,
+								0.9787234042553191,
+								0.02127659574468085,
+								0.9787234042553191
 							]
 						},
 						"useCollisionPoly": true,
@@ -42,7 +42,7 @@
 						"tag": ""
 					}
 				],
-				"sid": 499427283518930,
+				"sid": 342974823489944,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

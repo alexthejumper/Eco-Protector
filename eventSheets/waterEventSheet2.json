@@ -1,15 +1,25 @@
 {
-	"name": "waterEventSheet",
+	"name": "waterEventSheet2",
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "flameLifeNumber",
+			"name": "flameLifeNumber2",
 			"type": "number",
 			"initialValue": "20",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 691636591498883
+			"sid": 575879289177456
+		},
+		{
+			"eventType": "variable",
+			"name": "totalTime",
+			"type": "number",
+			"initialValue": "60",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 412227072670361
 		},
 		{
 			"eventType": "block",
@@ -17,14 +27,14 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 246634197345968
+					"sid": 624261215092840
 				}
 			],
 			"actions": [
 				{
 					"id": "set-instvar-value",
 					"objectClass": "flames",
-					"sid": 529792234651507,
+					"sid": 889587395983135,
 					"parameters": {
 						"instance-variable": "flameLife",
 						"value": "flameLifeNumber"
@@ -33,25 +43,25 @@
 				{
 					"id": "set-instvar-value",
 					"objectClass": "navigation",
-					"sid": 424374609887198,
+					"sid": 269765460967593,
 					"parameters": {
 						"instance-variable": "Direction",
-						"value": "random(0, 360)"
+						"value": "random(180, 360)"
 					}
 				},
 				{
 					"id": "set-instvar-value",
 					"objectClass": "navigation",
-					"sid": 472067841677150,
+					"sid": 281554163128491,
 					"parameters": {
 						"instance-variable": "Strength",
-						"value": "random(0, 0.1)"
+						"value": "random(0, 0.3)"
 					}
 				},
 				{
 					"id": "set-angle",
 					"objectClass": "navigation",
-					"sid": 414301838010635,
+					"sid": 825430697000583,
 					"parameters": {
 						"angle": "navigation.Direction"
 					}
@@ -59,31 +69,32 @@
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
-					"sid": 643274300864629,
+					"sid": 359462920961832,
 					"parameters": {
 						"layer": "\"dialogueLayer\"",
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 221680001921471,
-					"parameters": {
-						"seconds": "10"
+						"visibility": "invisible"
 					}
 				},
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
-					"sid": 976111409828633,
+					"sid": 682636033965097,
 					"parameters": {
 						"layer": "\"dialogueLayer\"",
 						"visibility": "invisible"
 					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 414320234040799,
+					"parameters": {
+						"variable": "totalTime",
+						"value": "60"
+					}
 				}
 			],
-			"sid": 106458563627957
+			"sid": 584903354296898
 		},
 		{
 			"eventType": "block",
@@ -91,14 +102,14 @@
 				{
 					"id": "every-tick",
 					"objectClass": "System",
-					"sid": 553018251652591
+					"sid": 402433296565957
 				}
 			],
 			"actions": [
 				{
 					"id": "set-angle-toward-position",
 					"objectClass": "cannon",
-					"sid": 330570368945294,
+					"sid": 303413658536812,
 					"parameters": {
 						"x": "Mouse.X",
 						"y": "Mouse.Y"
@@ -107,7 +118,7 @@
 				{
 					"id": "set-text",
 					"objectClass": "Text2",
-					"sid": 980432378112763,
+					"sid": 874590144171166,
 					"parameters": {
 						"text": "flames.flameLife"
 					}
@@ -115,13 +126,13 @@
 				{
 					"id": "set-text",
 					"objectClass": "testing",
-					"sid": 113334207557283,
+					"sid": 610571056345903,
 					"parameters": {
 						"text": "\"Wind Strength: \"&round(navigation.Strength*100)&\"%\""
 					}
 				}
 			],
-			"sid": 606999910275656
+			"sid": 203546195695490
 		},
 		{
 			"eventType": "block",
@@ -129,7 +140,7 @@
 				{
 					"id": "mouse-button-is-down",
 					"objectClass": "Mouse",
-					"sid": 683774988951409,
+					"sid": 579420045190471,
 					"parameters": {
 						"mouse-button": "left"
 					}
@@ -139,7 +150,7 @@
 				{
 					"id": "spawn-another-object",
 					"objectClass": "cannon",
-					"sid": 964134707269925,
+					"sid": 306033921484404,
 					"parameters": {
 						"object": "waterDroplet",
 						"layer": "\"groundLayer\"",
@@ -150,7 +161,7 @@
 				{
 					"id": "apply-impulse-at-angle",
 					"objectClass": "waterDroplet",
-					"sid": 300971765236271,
+					"sid": 214060615471285,
 					"behaviorType": "Physics",
 					"parameters": {
 						"impulse": "distance(Self.X, Self.Y, Mouse.X, Mouse.Y) / 50000",
@@ -161,7 +172,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 816369953237832,
+					"sid": 603214362267819,
 					"parameters": {
 						"seconds": "0.5"
 					}
@@ -169,7 +180,7 @@
 				{
 					"id": "apply-force-at-angle",
 					"objectClass": "waterDroplet",
-					"sid": 143314976999647,
+					"sid": 993256884705726,
 					"behaviorType": "Physics",
 					"parameters": {
 						"force": "navigation.Strength",
@@ -178,7 +189,7 @@
 					}
 				}
 			],
-			"sid": 450508852536765
+			"sid": 316105470870770
 		},
 		{
 			"eventType": "block",
@@ -186,7 +197,7 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 372556795869046,
+					"sid": 450980407479321,
 					"parameters": {
 						"interval-seconds": "5"
 					}
@@ -196,31 +207,31 @@
 				{
 					"id": "set-instvar-value",
 					"objectClass": "navigation",
-					"sid": 220797261262779,
+					"sid": 487178100972916,
 					"parameters": {
 						"instance-variable": "Direction",
-						"value": "random(0, 360)"
+						"value": "random(180, 360)"
 					}
 				},
 				{
 					"id": "set-instvar-value",
 					"objectClass": "navigation",
-					"sid": 714361218905271,
+					"sid": 211629203605830,
 					"parameters": {
 						"instance-variable": "Strength",
-						"value": "random(0, 0.1)"
+						"value": "random(0, 0.3)"
 					}
 				},
 				{
 					"id": "set-angle",
 					"objectClass": "navigation",
-					"sid": 815254264033497,
+					"sid": 744165657640296,
 					"parameters": {
 						"angle": "navigation.Direction"
 					}
 				}
 			],
-			"sid": 746925829737997
+			"sid": 642069113664829
 		},
 		{
 			"eventType": "block",
@@ -228,14 +239,14 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 781428566922114,
+					"sid": 453412537074076,
 					"parameters": {
 						"interval-seconds": "5"
 					}
 				}
 			],
 			"actions": [],
-			"sid": 995774894367519,
+			"sid": 193603825446231,
 			"children": [
 				{
 					"eventType": "block",
@@ -243,14 +254,14 @@
 						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "flames",
-							"sid": 903570448834197,
+							"sid": 592864962417512,
 							"parameters": {
 								"object": "trigger"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 262826615114820,
+					"sid": 744814388392440,
 					"children": [
 						{
 							"eventType": "block",
@@ -258,7 +269,7 @@
 								{
 									"id": "is-boolean-instance-variable-set",
 									"objectClass": "trigger",
-									"sid": 930544179499578,
+									"sid": 226648000262209,
 									"parameters": {
 										"instance-variable": "hasFireSpawned"
 									},
@@ -269,7 +280,7 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "trigger",
-									"sid": 436716135402199,
+									"sid": 515987492503588,
 									"parameters": {
 										"object": "flames",
 										"layer": "\"flamesLayer\"",
@@ -280,7 +291,7 @@
 								{
 									"id": "set-size",
 									"objectClass": "flames",
-									"sid": 177691904588651,
+									"sid": 423148947887758,
 									"parameters": {
 										"width": "96",
 										"height": "83"
@@ -289,7 +300,7 @@
 								{
 									"id": "set-boolean-instvar",
 									"objectClass": "trigger",
-									"sid": 771990825127021,
+									"sid": 396267147537173,
 									"parameters": {
 										"instance-variable": "hasFireSpawned",
 										"value": "true"
@@ -298,14 +309,14 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "flames",
-									"sid": 774722049328154,
+									"sid": 316259450682663,
 									"parameters": {
 										"instance-variable": "flameLife",
 										"value": "flameLifeNumber"
 									}
 								}
 							],
-							"sid": 118745768844905
+							"sid": 588160610356984
 						}
 					]
 				}
@@ -317,7 +328,7 @@
 				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "flames",
-					"sid": 752697560562720,
+					"sid": 452687938863452,
 					"parameters": {
 						"object": "tree3"
 					}
@@ -327,14 +338,14 @@
 				{
 					"id": "subtract-from-instvar",
 					"objectClass": "tree3",
-					"sid": 399689201743568,
+					"sid": 209965802780699,
 					"parameters": {
 						"instance-variable": "tree3Life",
 						"value": "1"
 					}
 				}
 			],
-			"sid": 791866741966565
+			"sid": 976528886370304
 		},
 		{
 			"eventType": "block",
@@ -342,7 +353,7 @@
 				{
 					"id": "compare-instance-variable",
 					"objectClass": "tree3",
-					"sid": 221666280478655,
+					"sid": 106557373788750,
 					"parameters": {
 						"instance-variable": "tree3Life",
 						"comparison": 0,
@@ -354,14 +365,14 @@
 				{
 					"id": "set-animation",
 					"objectClass": "tree3",
-					"sid": 733944079698913,
+					"sid": 682444870443159,
 					"parameters": {
 						"animation": "\"tree0\"",
 						"from": "beginning"
 					}
 				}
 			],
-			"sid": 674410981833501
+			"sid": 279242453086759
 		},
 		{
 			"eventType": "block",
@@ -369,7 +380,7 @@
 				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "waterDroplet",
-					"sid": 583704211095318,
+					"sid": 261515530104315,
 					"parameters": {
 						"object": "flames"
 					}
@@ -379,7 +390,7 @@
 				{
 					"id": "subtract-from-instvar",
 					"objectClass": "flames",
-					"sid": 802917252794889,
+					"sid": 266463347101148,
 					"parameters": {
 						"instance-variable": "flameLife",
 						"value": "1"
@@ -388,10 +399,10 @@
 				{
 					"id": "destroy",
 					"objectClass": "waterDroplet",
-					"sid": 567927152375005
+					"sid": 805528960899115
 				}
 			],
-			"sid": 172559271148293,
+			"sid": 817037733284058,
 			"children": [
 				{
 					"eventType": "block",
@@ -399,7 +410,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "flames",
-							"sid": 681167231734417,
+							"sid": 917536366066825,
 							"parameters": {
 								"instance-variable": "flameLife",
 								"comparison": 0,
@@ -411,13 +422,56 @@
 						{
 							"id": "destroy",
 							"objectClass": "flames",
-							"sid": 851005393909253
+							"sid": 640726444052267
 						}
 					],
-					"sid": 701066897507934
+					"sid": 901490587057708
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 352401108027453,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 544179687208209,
+					"parameters": {
+						"variable": "totalTime",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 132330448230141,
+					"parameters": {
+						"variable": "totalTime",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "countDownText",
+					"sid": 755914350015437,
+					"parameters": {
+						"text": "zeropad(floor(TotalTime/60),1) & \":\" & zeropad(floor(TotalTime%60),2)"
+					}
+				}
+			],
+			"sid": 530812471080744
 		}
 	],
-	"sid": 159038589447732
+	"sid": 357816502767158
 }

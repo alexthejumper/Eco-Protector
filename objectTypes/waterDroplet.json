@@ -1,0 +1,200 @@
+{
+	"name": "waterDroplet",
+	"plugin-id": "Sprite",
+	"sid": 804418602248207,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 541416468106769
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 168,
+						"height": 169,
+						"originX": 0.5297619047619049,
+						"originY": 0.4970414201183432,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5120698,
+						"collisionPoly": {
+							"points": [
+								0.42499996366955,
+								0.4485205926838711,
+								0.5392855689639139,
+								0.44733731422198586,
+								0.5392855689639136,
+								0.5384614481728458,
+								0.421428680419922,
+								0.5408284565400794
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 499427283518930,
+				"name": "drop1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 170,
+						"height": 124,
+						"originX": 0.5058823529411764,
+						"originY": 0.9838709677419355,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6790822,
+						"collisionPoly": {
+							"points": [
+								0.42588231703814355,
+								0.6193546787385018,
+								0.5388233857996325,
+								0.617741984705771,
+								0.5388233857996322,
+								0.7419353608162172,
+								0.42235304888556996,
+								0.7451613641554308
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 850467352651418,
+				"name": "drop2",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 170,
+						"height": 91,
+						"originX": 0.5058823529411764,
+						"originY": 0.989010989010989,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5003337,
+						"collisionPoly": {
+							"points": [
+								0.42588231703814355,
+								0.8439558259733431,
+								0.5388233857996325,
+								0.8417583088298419,
+								0.5388233857996322,
+								1,
+								0.42235304888556996,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 421680982111909,
+				"name": "drop3",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 160,
+						"height": 51,
+						"originX": 0.5,
+						"originY": 0.9803921568627451,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1928939,
+						"collisionPoly": {
+							"points": [
+								0.43999996185302753,
+								1,
+								0.5599998474121095,
+								1,
+								0.5599998474121092,
+								1,
+								0.43625011444091805,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 800354569462225,
+				"name": "drop4",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 168,
+						"height": 169,
+						"originX": 0.5297619047619049,
+						"originY": 0.4970414201183432,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5897432,
+						"collisionPoly": {
+							"points": [
+								0.42499996366955,
+								0.4485205926838711,
+								0.5392855689639139,
+								0.44733731422198586,
+								0.5392855689639136,
+								0.5384614481728458,
+								0.421428680419922,
+								0.5408284565400794
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 774086995625296,
+				"name": "drop5",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
