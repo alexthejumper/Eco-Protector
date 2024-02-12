@@ -1,0 +1,12 @@
+{
+	"name": "GameMonetizeSDK",
+	"plugin-id": "GM_SDK",
+	"sid": 752416304730037,
+	"singleglobal-inst": {
+		"type": "GameMonetizeSDK",
+		"properties": {
+			"game-id": "p0nf5pzzkvs3kdm5hdiiok3enb4bu0w4"
+		},
+		"uid": 1365
+	}
+}

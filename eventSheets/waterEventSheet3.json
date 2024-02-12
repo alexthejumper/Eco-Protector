@@ -1,0 +1,1413 @@
+{
+	"name": "waterEventSheet3",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "menuEventSheet"
+		},
+		{
+			"eventType": "variable",
+			"name": "flameLifeNumber3",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 329098110744253
+		},
+		{
+			"eventType": "variable",
+			"name": "totalTime2",
+			"type": "number",
+			"initialValue": "60",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 418279724449075
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 716711889926132
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 991176594305991,
+					"parameters": {
+						"layer": "\"pauseLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 536868291871695,
+					"parameters": {
+						"layer": "\"winLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 611547875202373,
+					"parameters": {
+						"layer": "\"loseLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 948223557489760,
+					"parameters": {
+						"layer": "\"menuOpacityLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "flames",
+					"sid": 344614451879026,
+					"parameters": {
+						"instance-variable": "flameLife",
+						"value": "flameLifeNumber"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "navigation",
+					"sid": 331598890718716,
+					"parameters": {
+						"instance-variable": "Direction",
+						"value": "random(180, 360)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "navigation",
+					"sid": 395921320230052,
+					"parameters": {
+						"instance-variable": "Strength",
+						"value": "random(0, 0.3)"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "navigation",
+					"sid": 184194208627004,
+					"parameters": {
+						"angle": "navigation.Direction"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 292751487213929,
+					"parameters": {
+						"layer": "\"dialogueLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 981781019600701,
+					"parameters": {
+						"layer": "\"dialogueLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 527196277557847,
+					"parameters": {
+						"variable": "totalTime",
+						"value": "60"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 870491101395185,
+					"parameters": {
+						"variable": "levelScore",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 517240589482000,
+					"parameters": {
+						"variable": "totalFlames",
+						"value": "24"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 151622852973580,
+					"parameters": {
+						"variable": "totalTrees",
+						"value": "5"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "orangeTree",
+					"sid": 902290521747369,
+					"parameters": {
+						"instance-variable": "orangeTreeLife",
+						"value": "20"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "purpleTree",
+					"sid": 256548114548055,
+					"parameters": {
+						"instance-variable": "purpleTreeLife",
+						"value": "10"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "greenTree",
+					"sid": 816049220211590,
+					"parameters": {
+						"instance-variable": "greenTreeLife",
+						"value": "10"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "redTree",
+					"sid": 683386180701938,
+					"parameters": {
+						"instance-variable": "redTreeLife",
+						"value": "30"
+					}
+				}
+			],
+			"sid": 885231067242449
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 482719078962785
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "cannon",
+					"sid": 655799339131994,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text2",
+					"sid": 846300765557854,
+					"parameters": {
+						"text": "flames.flameLife"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "testing",
+					"sid": 194217719891757,
+					"parameters": {
+						"text": "\"Wind Strength: \"&round(navigation.Strength*100)&\"%\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "levelScoreText",
+					"sid": 965545813443741,
+					"parameters": {
+						"text": "\"Score : \"&levelScore"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "loseScore",
+					"sid": 606751328455434,
+					"parameters": {
+						"text": "\"Score : \"&levelScore"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "menuScore",
+					"sid": 106045203085173,
+					"parameters": {
+						"text": "\"Score : \"&levelScore"
+					}
+				}
+			],
+			"sid": 203602849567894
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 721554105964864,
+					"parameters": {
+						"interval-seconds": "5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "navigation",
+					"sid": 896042698268535,
+					"parameters": {
+						"instance-variable": "Direction",
+						"value": "random(180, 360)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "navigation",
+					"sid": 628488056785929,
+					"parameters": {
+						"instance-variable": "Strength",
+						"value": "random(0, 0.3)"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "navigation",
+					"sid": 804954405517341,
+					"parameters": {
+						"angle": "navigation.Direction"
+					}
+				}
+			],
+			"sid": 628476585706673
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 341192335951431,
+					"parameters": {
+						"interval-seconds": "5"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 124853869140446,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "flames",
+							"sid": 128436341790827,
+							"parameters": {
+								"object": "trigger"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 392069213474332,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "trigger",
+									"sid": 380106494733996,
+									"parameters": {
+										"instance-variable": "hasFireSpawned"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "trigger",
+									"sid": 165237849554526,
+									"parameters": {
+										"object": "flames",
+										"layer": "\"flamesLayer\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "flames",
+									"sid": 181186824162668,
+									"parameters": {
+										"width": "96",
+										"height": "83"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "trigger",
+									"sid": 722735867677791,
+									"parameters": {
+										"instance-variable": "hasFireSpawned",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "flames",
+									"sid": 523937975792508,
+									"parameters": {
+										"instance-variable": "flameLife",
+										"value": "flameLifeNumber2"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 523276916334565,
+									"parameters": {
+										"variable": "totalFlames",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 942341834029671
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "flames",
+					"sid": 842983989242448,
+					"parameters": {
+						"object": "tree3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "tree3",
+					"sid": 223196407174546,
+					"parameters": {
+						"instance-variable": "tree3Life",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 989728127883185,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "tree3",
+							"sid": 267760271599512,
+							"parameters": {
+								"instance-variable": "tree3Life",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "tree3",
+							"sid": 833302694091127,
+							"parameters": {
+								"animation": "\"tree0\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 588193848461021,
+							"parameters": {
+								"variable": "levelScore",
+								"value": "30"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 505573287425940,
+							"parameters": {
+								"variable": "totalTrees",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 286417444489955
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "flames",
+					"sid": 515296468563552,
+					"parameters": {
+						"object": "tree3"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 837008437879664,
+					"parameters": {
+						"variable": "totalTrees",
+						"comparison": 1,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 236124676434059,
+					"parameters": {
+						"variable": "levelScore",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 317188689806610
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "flames",
+					"sid": 784935087817107,
+					"parameters": {
+						"object": "greenTree"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "greenTree",
+					"sid": 508429527032725,
+					"parameters": {
+						"instance-variable": "greenTreeLife",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 181574345985867,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "greenTree",
+							"sid": 155986995512411,
+							"parameters": {
+								"instance-variable": "greenTreeLife",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 217218110123599,
+							"parameters": {
+								"variable": "levelScore",
+								"value": "30"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 380391195343133,
+							"parameters": {
+								"variable": "totalTrees",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "greenTree",
+							"sid": 238427427997109,
+							"parameters": {
+								"animation": "\"DryTree\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 747981922232190
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "flames",
+					"sid": 662502945996111,
+					"parameters": {
+						"object": "greenTree"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 134483721552919,
+					"parameters": {
+						"variable": "totalTrees",
+						"comparison": 1,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 441595246442357,
+					"parameters": {
+						"variable": "levelScore",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 260288458309947
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "flames",
+					"sid": 112909529844178,
+					"parameters": {
+						"object": "orangeTree"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "orangeTree",
+					"sid": 906424163861891,
+					"parameters": {
+						"instance-variable": "orangeTreeLife",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 455713800299910,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "orangeTree",
+							"sid": 692049857614355,
+							"parameters": {
+								"instance-variable": "orangeTreeLife",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 425367136543491,
+							"parameters": {
+								"variable": "levelScore",
+								"value": "30"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 328411171199562,
+							"parameters": {
+								"variable": "totalTrees",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "orangeTree",
+							"sid": 583774886716757,
+							"parameters": {
+								"animation": "\"DryTree\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 187951821141063
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "flames",
+					"sid": 472874788838376,
+					"parameters": {
+						"object": "orangeTree"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 597980671099543,
+					"parameters": {
+						"variable": "totalTrees",
+						"comparison": 1,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 814069313900538,
+					"parameters": {
+						"variable": "levelScore",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 200002285492606
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "flames",
+					"sid": 681185724258442,
+					"parameters": {
+						"object": "purpleTree"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "purpleTree",
+					"sid": 943343263177206,
+					"parameters": {
+						"instance-variable": "purpleTreeLife",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 732410639118966,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "purpleTree",
+							"sid": 897317587856770,
+							"parameters": {
+								"instance-variable": "purpleTreeLife",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 712432583645813,
+							"parameters": {
+								"variable": "levelScore",
+								"value": "30"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 632290243936108,
+							"parameters": {
+								"variable": "totalTrees",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "purpleTree",
+							"sid": 652499315304687,
+							"parameters": {
+								"animation": "\"DryTree\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 487342345491154
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "flames",
+					"sid": 351655895960598,
+					"parameters": {
+						"object": "purpleTree"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 156305918321786,
+					"parameters": {
+						"variable": "totalTrees",
+						"comparison": 1,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 600950653810308,
+					"parameters": {
+						"variable": "levelScore",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 186999819067963
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "waterDroplet",
+					"sid": 207162439170924,
+					"parameters": {
+						"object": "flames"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "flames",
+					"sid": 903477930750906,
+					"parameters": {
+						"instance-variable": "flameLife",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "waterDroplet",
+					"sid": 778218412504282
+				}
+			],
+			"sid": 456648957593787,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "flames",
+							"sid": 795290426793305,
+							"parameters": {
+								"instance-variable": "flameLife",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "flames",
+							"sid": 485142237829592
+						}
+					],
+					"sid": 614643125606297
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 854283302467748,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 263872392799132,
+					"parameters": {
+						"variable": "totalTime",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 968130402051869,
+					"parameters": {
+						"variable": "totalTime",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "countDownText",
+					"sid": 183281353406176,
+					"parameters": {
+						"text": "zeropad(floor(TotalTime/60),1) & \":\" & zeropad(floor(TotalTime%60),2)"
+					}
+				}
+			],
+			"sid": 290047853264375
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Controls6",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "mouse-button-is-down",
+							"objectClass": "Mouse",
+							"sid": 717076841704286,
+							"parameters": {
+								"mouse-button": "left"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 142333801302693,
+							"parameters": {
+								"object": "pause"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "cannon",
+							"sid": 436947953923989,
+							"parameters": {
+								"object": "waterDroplet",
+								"layer": "\"waterLayer\"",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "apply-impulse-at-angle",
+							"objectClass": "waterDroplet",
+							"sid": 560122087653648,
+							"behaviorType": "Physics",
+							"parameters": {
+								"impulse": "distance(Self.X, Self.Y, Mouse.X, Mouse.Y) / 50000",
+								"angle": "cannon.Angle",
+								"image-point": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 327083490785123,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "apply-force-at-angle",
+							"objectClass": "waterDroplet",
+							"sid": 587009223171447,
+							"behaviorType": "Physics",
+							"parameters": {
+								"force": "navigation.Strength",
+								"angle": "navigation.Direction",
+								"image-point": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 606484493809439,
+							"parameters": {
+								"seconds": "8"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "waterDroplet",
+							"sid": 905146000714020
+						}
+					],
+					"sid": 495762698725027
+				}
+			],
+			"sid": 630189230759954
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu Buttons6",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 906877649471178,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "pause"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 812239443199372,
+							"parameters": {
+								"group-name": "\"Controls5\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 306195715254819,
+							"parameters": {
+								"layer": "\"menuOpacityLayer\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 100582350312369,
+							"parameters": {
+								"layer": "\"pauseLayer\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 358137350669559
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 234994192101804,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "play2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 323383380498391,
+							"parameters": {
+								"layer": "\"menuOpacityLayer\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 709017994845752,
+							"parameters": {
+								"layer": "\"pauseLayer\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 135302464660115,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 109345469702183,
+							"parameters": {
+								"group-name": "\"Controls5\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 572622398249646
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 331696801842332,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "homeIcon"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 167395249482634,
+							"parameters": {
+								"layout": "menuLayout"
+							}
+						}
+					],
+					"sid": 391450682041482
+				}
+			],
+			"sid": 373624154565653
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Win Group3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 919091084123500,
+							"parameters": {
+								"variable": "totalFlames",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 560012720498104,
+							"parameters": {
+								"layer": "\"winLayer\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 760073202996059,
+							"parameters": {
+								"layer": "\"menuOpacityLayer\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 211248254381394
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 993474247162005,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "nextLevelButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-nextprevious-layout",
+							"objectClass": "System",
+							"sid": 622376461644912,
+							"parameters": {
+								"which": "next"
+							}
+						}
+					],
+					"sid": 576190945089375
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 248877887805461,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "backLevel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-nextprevious-layout",
+							"objectClass": "System",
+							"sid": 636283129511215,
+							"parameters": {
+								"which": "previous"
+							}
+						}
+					],
+					"sid": 588589871417691
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 843000865002384,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "restartButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 117419221959606
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 303998451401037,
+							"parameters": {
+								"layer": "\"winLayer\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 124944137888310,
+							"parameters": {
+								"layer": "\"menuOpacityLayer\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 198541445490471,
+							"parameters": {
+								"layer": "\"loseLayer\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 561253866164774
+				}
+			],
+			"sid": 891960864476146
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Lose Group3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 165751809075724,
+							"parameters": {
+								"variable": "totalTrees",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 884161985908601,
+							"parameters": {
+								"layer": "\"loseLayer\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 425665594088389,
+							"parameters": {
+								"layer": "\"menuOpacityLayer\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "show-ad",
+							"objectClass": "GameMonetizeSDK",
+							"sid": 978586308417291
+						}
+					],
+					"sid": 658754145052934
+				}
+			],
+			"sid": 242072878038256
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-text",
+					"objectClass": "countDownText",
+					"sid": 703055337116126,
+					"parameters": {
+						"text-to-compare": "\"0:00\"",
+						"case-sensitivity": "ignore-case"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 846177284853996,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 630953493987753,
+							"parameters": {
+								"variable": "totalFlames",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 660061035387743,
+							"parameters": {
+								"layer": "\"loseLayer\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 247210375984644,
+							"parameters": {
+								"layer": "\"menuOpacityLayer\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "show-ad",
+							"objectClass": "GameMonetizeSDK",
+							"sid": 183162152112202
+						}
+					],
+					"sid": 329154496898124
+				}
+			]
+		}
+	],
+	"sid": 235499937828643
+}

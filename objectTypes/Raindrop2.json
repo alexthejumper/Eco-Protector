@@ -1,0 +1,56 @@
+{
+	"name": "Raindrop2",
+	"plugin-id": "Sprite",
+	"sid": 109065462273041,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 476587054961005
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 23,
+						"originX": 0.4583333333333333,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1600306,
+						"collisionPoly": {
+							"points": [
+								0.7739898989898991,
+								0.7380952380952382,
+								0.1426767676767677,
+								0.7380952380952382,
+								0.1426767676767677,
+								0.26190476190476186,
+								0.7739898989898991,
+								0.26190476190476186
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 228498578665715,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

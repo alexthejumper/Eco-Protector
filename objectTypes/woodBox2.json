@@ -1,0 +1,56 @@
+{
+	"name": "woodBox2",
+	"plugin-id": "Sprite",
+	"sid": 792626328161772,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 727345028985428
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 47,
+						"height": 47,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9097733,
+						"collisionPoly": {
+							"points": [
+								0.02127659574468085,
+								0.02127659574468085,
+								0.9787234042553191,
+								0.02127659574468085,
+								0.9787234042553191,
+								0.9787234042553191,
+								0.02127659574468085,
+								0.9787234042553191
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 339780917820305,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

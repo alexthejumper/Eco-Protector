@@ -2,6 +2,10 @@
 	"name": "projectileEventSheet",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "menuEventSheet"
+		},
+		{
 			"eventType": "variable",
 			"name": "touchX",
 			"type": "number",
@@ -22,6 +26,231 @@
 			"sid": 465613300916574
 		},
 		{
+			"eventType": "variable",
+			"name": "seedReached",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 784176165468199
+		},
+		{
+			"eventType": "variable",
+			"name": "seedLimit",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 452486404263607
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Controls",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 437003181253803,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 136291548496164,
+							"parameters": {
+								"object": "pause"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "cannon",
+							"sid": 527591507835938,
+							"parameters": {
+								"object": "seed",
+								"layer": "\"seedLayer\"",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "apply-impulse-at-angle",
+							"objectClass": "seed",
+							"sid": 236334622914609,
+							"behaviorType": "Physics",
+							"parameters": {
+								"impulse": "distance(Self.X, Self.Y, 10, 10) / 200",
+								"angle": "cannon.Angle",
+								"image-point": "0"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 547307429323009,
+							"parameters": {
+								"variable": "seedLimit",
+								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 622162821720949,
+							"parameters": {
+								"audio-file": "empty-gun-shot-6209",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 433504667499210
+				}
+			],
+			"sid": 526403579744569
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu Buttons",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 841656756243720,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "pause"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 471104098710370,
+							"parameters": {
+								"group-name": "\"Controls\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 834037277663905,
+							"parameters": {
+								"layer": "\"menuOpacityLayer\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 333099776319514,
+							"parameters": {
+								"layer": "\"pauseLayer\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 806606046989742
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 887715453002704,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "play2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 291584107644923,
+							"parameters": {
+								"group-name": "\"Controls\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 396038171341608,
+							"parameters": {
+								"layer": "\"menuOpacityLayer\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 734098122938251,
+							"parameters": {
+								"layer": "\"pauseLayer\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 340636848373541
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 347140712741044,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "homeIcon"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 820269092046893,
+							"parameters": {
+								"layout": "menuLayout"
+							}
+						}
+					],
+					"sid": 802832997171975
+				}
+			],
+			"sid": 426283562910115
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -31,6 +260,81 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 392647981217967,
+					"parameters": {
+						"audio-file": "lit-fireplace-6307",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"flameSound2\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 619644544431586,
+					"parameters": {
+						"variable": "levelScore",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 215132332944518,
+					"parameters": {
+						"layer": "\"winLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 630290268870982,
+					"parameters": {
+						"layer": "\"loseLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "redTree",
+					"sid": 145240609580534,
+					"parameters": {
+						"instance-variable": "redTreeLife",
+						"value": "40"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "purpleTree",
+					"sid": 552946903798204,
+					"parameters": {
+						"instance-variable": "purpleTreeLife",
+						"value": "30"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 467551038470097,
+					"parameters": {
+						"layer": "\"pauseLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 820472136889959,
+					"parameters": {
+						"layer": "\"menuOpacityLayer\"",
+						"visibility": "invisible"
+					}
+				},
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
@@ -78,6 +382,38 @@
 						"x": "Mouse.X",
 						"y": "Mouse.Y"
 					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "seedVelocity",
+					"sid": 492600566900224,
+					"parameters": {
+						"text": "redTree.redTreeLife&\" : \"&purpleTree.purpleTreeLife"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "levelScoreText",
+					"sid": 275775710208701,
+					"parameters": {
+						"text": "\"Score : \"&levelScore"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "menuScore",
+					"sid": 307520710282117,
+					"parameters": {
+						"text": "\"Score : \"&levelScore"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "loseScore",
+					"sid": 952932733879466,
+					"parameters": {
+						"text": "\"Score : \"&levelScore"
+					}
 				}
 			],
 			"sid": 452283792899551
@@ -86,58 +422,561 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-click",
-					"objectClass": "Mouse",
-					"sid": 734217570244988,
+					"id": "on-collision-with-another-object",
+					"objectClass": "redTree",
+					"sid": 293891136058583,
 					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked"
+						"object": "pesticideParticle"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "redTree",
+					"sid": 623072120367518,
+					"parameters": {
+						"instance-variable": "redTreeLife",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 365200953164248,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "redTree",
+							"sid": 269939127316790,
+							"parameters": {
+								"instance-variable": "redTreeLife",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "redTree",
+							"sid": 108998271563607
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 402611606628947,
+							"parameters": {
+								"layer": "\"loseLayer\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 688101564251735,
+							"parameters": {
+								"layer": "\"menuOpacityLayer\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 439924412982609
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "purpleTree",
+					"sid": 256272950471251,
+					"parameters": {
+						"object": "pesticideParticle"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "purpleTree",
+					"sid": 712415262703943,
+					"parameters": {
+						"instance-variable": "purpleTreeLife",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 855015724322161,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "purpleTree",
+							"sid": 323232681046736,
+							"parameters": {
+								"instance-variable": "purpleTreeLife",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "purpleTree",
+							"sid": 116610507750386
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 279859428100477,
+							"parameters": {
+								"layer": "\"loseLayer\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 585216317317778,
+							"parameters": {
+								"layer": "\"menuOpacityLayer\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 617560156458960
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "seed",
+					"sid": 619877296160668,
+					"parameters": {
+						"object": "woodBox"
 					}
 				}
 			],
 			"actions": [
 				{
 					"id": "spawn-another-object",
-					"objectClass": "cannon",
-					"sid": 111519834598690,
+					"objectClass": "woodBox",
+					"sid": 172231494458170,
 					"parameters": {
-						"object": "seed",
-						"layer": "0",
-						"image-point": "1",
+						"object": "pesticideParticle",
+						"layer": "\"pesticidesLayer\"",
+						"image-point": "0",
 						"create-hierarchy": false
 					}
 				},
 				{
-					"id": "apply-impulse-at-angle",
-					"objectClass": "seed",
-					"sid": 257653597317911,
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 416711308687415,
+					"parameters": {
+						"audio-file": "smoke-machine-spray-3-185122",
+						"loop": "looping",
+						"volume": "-20",
+						"stereo-pan": "0",
+						"tag-optional": "\"pesticideSound\""
+					}
+				},
+				{
+					"id": "apply-impulse",
+					"objectClass": "pesticideParticle",
+					"sid": 349733816169898,
 					"behaviorType": "Physics",
 					"parameters": {
-						"impulse": "distance(Self.X, Self.Y, 10, 10) / 200",
-						"angle": "cannon.Angle",
+						"impulse-x": "-0.5",
+						"implulse-y": "-0.5",
 						"image-point": "0"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "woodBox",
+					"sid": 657168979756833
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 920484331492334,
+					"parameters": {
+						"seconds": "20"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "pesticideParticle",
+					"sid": 370457464032374
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 439052927537504,
+					"parameters": {
+						"tag": "\"pesticideSound\""
 					}
 				}
 			],
-			"sid": 747926054563204
+			"sid": 757635629432676
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "compare-velocity",
+					"id": "is-overlapping-another-object",
 					"objectClass": "seed",
-					"sid": 391198994480023,
-					"behaviorType": "Physics",
+					"sid": 263779115955037,
 					"parameters": {
-						"which": "x-velocity",
+						"object": "seedTrigger"
+					}
+				},
+				{
+					"id": "is-sleeping",
+					"objectClass": "seed",
+					"sid": 982215248803986,
+					"behaviorType": "Physics"
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 747977963064382,
+					"parameters": {
+						"variable": "seedReached"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "waterDroplet",
+					"sid": 195767804137717
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "seed",
+					"sid": 722847928878739,
+					"parameters": {
+						"animation": "\"animation1\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 768771004524311,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "seed",
+					"sid": 244659658671490,
+					"parameters": {
+						"animation": "\"animation2\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 177927780925996,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "seed",
+					"sid": 874132768514683
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "seedTrigger",
+					"sid": 844565374062491,
+					"parameters": {
+						"object": "tree3",
+						"layer": "\"treeLayer\"",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "tree3",
+					"sid": 549088712515254,
+					"parameters": {
+						"width": "81",
+						"height": "98"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 989028111136955,
+					"parameters": {
+						"variable": "seedReached",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 789500533128397,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 951640520976200,
+							"parameters": {
+								"variable": "seedLimit",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 315392665334488,
+							"parameters": {
+								"variable": "levelScore",
+								"value": "50"
+							}
+						}
+					],
+					"sid": 748463861896093
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 838804557832599,
+							"parameters": {
+								"variable": "seedLimit",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 553344719067196,
+							"parameters": {
+								"variable": "levelScore",
+								"value": "30"
+							}
+						}
+					],
+					"sid": 998983294973998
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Win Group4",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 351633668454866,
+							"parameters": {
+								"variable": "seedReached"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 721720254943695,
+							"parameters": {
+								"layer": "\"winLayer\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 656207172438997,
+							"parameters": {
+								"layer": "\"menuOpacityLayer\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 568239565875388
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 687229601499590,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "nextLevelButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-nextprevious-layout",
+							"objectClass": "System",
+							"sid": 471254597064467,
+							"parameters": {
+								"which": "next"
+							}
+						}
+					],
+					"sid": 196437816487021
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 885823381990098,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "backLevel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-nextprevious-layout",
+							"objectClass": "System",
+							"sid": 753268153204243,
+							"parameters": {
+								"which": "previous"
+							}
+						}
+					],
+					"sid": 877081390471614
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 366662138403899,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "restartButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 663394542410085
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 948389596510921,
+							"parameters": {
+								"layer": "\"winLayer\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 887360068528772,
+							"parameters": {
+								"layer": "\"menuOpacityLayer\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 817749541846468,
+							"parameters": {
+								"layer": "\"loseLayer\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 735501804393372
+				}
+			],
+			"sid": 406223241289785
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 631830949036693,
+					"parameters": {
+						"variable": "seedLimit",
 						"comparison": 0,
 						"value": "0"
 					}
 				}
 			],
-			"actions": [],
-			"sid": 896549851721959
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 650103316111632,
+					"parameters": {
+						"layer": "\"loseLayer\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 227485433028165,
+					"parameters": {
+						"layer": "\"menuOpacityLayer\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "show-ad",
+					"objectClass": "GameMonetizeSDK",
+					"sid": 516018353040187
+				}
+			],
+			"sid": 802787115103704,
+			"isOrBlock": true
 		}
 	],
 	"sid": 760846351081325

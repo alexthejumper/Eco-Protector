@@ -3,9 +3,31 @@
 	"savedWithRelease": 36802,
 	"name": "Eco Protector",
 	"runtime": "c3",
-	"useWorker": "auto",
+	"useWorker": "dom",
 	"bundleAddons": false,
 	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Facebook",
+			"name": "Facebook",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "GM_SDK",
+			"name": "GameMonetize SDK",
+			"author": "GameMonetize",
+			"bundled": false,
+			"version": "1.0.0"
+		},
 		{
 			"type": "plugin",
 			"id": "Mouse",
@@ -42,13 +64,6 @@
 			"bundled": false
 		},
 		{
-			"type": "plugin",
-			"id": "googleplay",
-			"name": "Google Play",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
 			"type": "behavior",
 			"id": "Bullet",
 			"name": "Bullet",
@@ -64,8 +79,22 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -88,6 +117,13 @@
 			"id": "alphaclamp2",
 			"name": "Alpha clamp",
 			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "swirl",
+			"name": "Swirl",
+			"author": "Brad Larson",
 			"bundled": false
 		}
 	],
@@ -118,13 +154,12 @@
 			"waterDroplet",
 			"Sprite2",
 			"testing",
-			"Text",
+			"dialogueText",
 			"timeText",
 			"Touch",
 			"tree3",
 			"Vegetable",
 			"vertical",
-			"GooglePlay",
 			"purpleTree",
 			"orangeTree",
 			"greenTree",
@@ -137,14 +172,72 @@
 			"darkLayer",
 			"winddirection",
 			"woodBox",
-			"pesticideParticle",
 			"navigation",
 			"Text2",
 			"trigger",
 			"windDirectionText",
-			"countDownText"
+			"countDownText",
+			"gameTitle",
+			"test",
+			"about",
+			"misic",
+			"sound",
+			"play",
+			"background2",
+			"desktop1920x",
+			"menuOpacity",
+			"Audio",
+			"pesticideParticle",
+			"seedTrigger",
+			"seedVelocity",
+			"tets",
+			"fogTrigger",
+			"PowerUp",
+			"Raindrop2",
+			"Fog",
+			"pause",
+			"table",
+			"opacityLayer2",
+			"homeIcon",
+			"play2",
+			"transition",
+			"paperdialog",
+			"woodBox2",
+			"facebookButtons",
+			"Text",
+			"logoutText",
+			"logoutSprite",
+			"backgroundWin",
+			"winObject",
+			"menuScore",
+			"restartButton",
+			"backLevel",
+			"shareButton",
+			"nextLevelButton",
+			"loseScore",
+			"textLose",
+			"backgroundLose",
+			"levelScoreText",
+			"creditsDetails",
+			"creditsDetails2",
+			"levelSelectBackground"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"GameMonetizeSDK"
+				],
+				"subfolders": [],
+				"name": "Monetisation"
+			},
+			{
+				"items": [
+					"Facebook"
+				],
+				"subfolders": [],
+				"name": "Facebook"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],
@@ -154,24 +247,35 @@
 	},
 	"layouts": {
 		"items": [
+			"menuLayout",
+			"introProjectileLayout",
 			"projectileLayout",
+			"introWaterLayout",
 			"waterLayout",
-			"rainLayout1",
-			"rainLayout2",
-			"rainLayout3",
+			"introRainLayout",
+			"rainLayout",
 			"projectileLayout2",
-			"waterLayout2"
+			"waterLayout2",
+			"rainLayout2",
+			"waterLayout3",
+			"rainLayout3"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
 			"projectileEventSheet",
-			"rainEventSheet1",
+			"waterEventSheet",
+			"waterEventSheet2",
+			"waterEventSheet3",
+			"menuEventSheet",
+			"projectileEventSheet2",
+			"introProjectileEventSheet",
+			"introWaterEventSheet",
 			"rainEventSheet2",
 			"rainEventSheet3",
-			"waterEventSheet",
-			"waterEventSheet2"
+			"rainEventSheet",
+			"introRainEventSheet"
 		],
 		"subfolders": []
 	},
@@ -181,11 +285,85 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "water_drop-6707.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 405857942876845,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "water-splash-46402.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 584559821831978,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "typing-cherry-mx-blue-switches-30614_gHytZ1p5.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 952760848570197,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "lit-fireplace-6307.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 991041358023709,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "spray-paint-86162.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 966753435976261,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "smoke-machine-spray-3-185122.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 622950356772847,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "empty-gun-shot-6209.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 590735896638431,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "splash-by-blaukreuz-6261.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 299571907767191,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "backgroundMusic.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 314528055772435,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"video": {
@@ -203,7 +381,7 @@
 					"type": "image/png",
 					"sid": 945515690842275,
 					"icon-info": {
-						"purpose": "app-icon"
+						"purpose": "none"
 					}
 				},
 				{
@@ -211,7 +389,7 @@
 					"type": "image/png",
 					"sid": 972873306946541,
 					"icon-info": {
-						"purpose": "app-icon"
+						"purpose": "none"
 					}
 				},
 				{
@@ -219,7 +397,7 @@
 					"type": "image/png",
 					"sid": 415421540455549,
 					"icon-info": {
-						"purpose": "app-icon"
+						"purpose": "none"
 					}
 				},
 				{
@@ -235,7 +413,7 @@
 					"type": "image/png",
 					"sid": 507129405851833,
 					"icon-info": {
-						"purpose": "app-icon"
+						"purpose": "none"
 					}
 				},
 				{
@@ -243,7 +421,7 @@
 					"type": "image/png",
 					"sid": 910576327393205,
 					"icon-info": {
-						"purpose": "app-icon"
+						"purpose": "none"
 					}
 				},
 				{
@@ -274,12 +452,12 @@
 		]
 	},
 	"properties": {
-		"description": "",
+		"description": "Physics based game",
 		"version": "1.0.0.0",
-		"author": "",
-		"authorEmail": "",
+		"author": "Alexandre Chloe",
+		"authorEmail": "alexaguero997@gmail.com",
 		"authorWebsite": "",
-		"appId": "",
+		"appId": "com.chloe.alexandre",
 		"pixelRounding": false,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
@@ -319,7 +497,7 @@
 		"zNear": 1,
 		"zFar": 10000,
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "progress-logo",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
@@ -329,5 +507,5 @@
 	},
 	"viewportWidth": 1200,
 	"viewportHeight": 480,
-	"firstLayout": null
+	"firstLayout": "menuLayout"
 }

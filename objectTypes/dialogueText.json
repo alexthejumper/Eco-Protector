@@ -1,0 +1,28 @@
+{
+	"name": "dialogueText",
+	"plugin-id": "Text",
+	"sid": 992943662562481,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "sText",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 556732913139446
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 118059322908718
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 557866401040987
+		}
+	],
+	"effectTypes": []
+}

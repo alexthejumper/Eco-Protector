@@ -1,0 +1,265 @@
+{
+	"name": "introWaterEventSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 306469790098038
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 192135618240064,
+					"parameters": {
+						"layer": "\"dialogueLayer\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 566774000711832,
+					"parameters": {
+						"tag": "\"bgMusic\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 208702265915545,
+					"parameters": {
+						"audio-file": "lit-fireplace-6307",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"flameSound\""
+					}
+				}
+			],
+			"sid": 372357661232318
+		},
+		{
+			"functionName": "Fade2",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 664512991004932,
+					"parameters": {
+						"object-to-create": "transition",
+						"layer": "\"fadingLayer\"",
+						"x": "960",
+						"y": "530",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "transition",
+					"sid": 324817121746779,
+					"parameters": {
+						"width": "1925",
+						"height": "1087"
+					}
+				},
+				{
+					"id": "start-fade",
+					"objectClass": "transition",
+					"sid": 172820233453216,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 141421943644814
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-wait-finished",
+					"objectClass": "transition",
+					"sid": 999810327294131,
+					"behaviorType": "Fade"
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 938662343996139,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 879430713663548
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "dialogueText",
+					"sid": 317362037535914
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "dialogueText",
+					"sid": 158250124580371,
+					"parameters": {
+						"text": "\"\""
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "dialogueText",
+					"sid": 420495901919568,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "0.05",
+						"type": "regular",
+						"tag": "\"add\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 954797472039980,
+					"parameters": {
+						"audio-file": "typing-cherry-mx-blue-switches-30614_gHytZ1p5",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"typingSound\""
+					}
+				}
+			],
+			"sid": 409764233876526
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "dialogueText",
+					"sid": 324888737546012,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"add\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "append-text",
+					"objectClass": "dialogueText",
+					"sid": 607845666643408,
+					"parameters": {
+						"text": "mid(dialogueText.sText, len(dialogueText.Text), 1)"
+					}
+				}
+			],
+			"sid": 485809288116229,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-text",
+							"objectClass": "dialogueText",
+							"sid": 250227155001599,
+							"parameters": {
+								"text-to-compare": "dialogueText.sText",
+								"case-sensitivity": "ignore-case"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-timer",
+							"objectClass": "dialogueText",
+							"sid": 275015164926427,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"add\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 256364554936456,
+							"parameters": {
+								"tag": "\"typingSound\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 978583808388737,
+							"parameters": {
+								"seconds": "3"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "paperdialog",
+							"sid": 182186879175946,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "dialogueText",
+							"sid": 845231106376547,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 540432385256012,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"callFunction": "Fade",
+							"sid": 555948878480684
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 797540740016922,
+							"parameters": {
+								"seconds": "0.8"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 939885618821031,
+							"parameters": {
+								"tag": "\"flameSound\"\n"
+							}
+						}
+					],
+					"sid": 609997903456554
+				}
+			]
+		}
+	],
+	"sid": 784753209251758
+}

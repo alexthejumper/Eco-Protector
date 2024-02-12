@@ -1,0 +1,12 @@
+{
+	"name": "Facebook",
+	"plugin-id": "Facebook",
+	"sid": 737045623814551,
+	"singleglobal-inst": {
+		"type": "Facebook",
+		"properties": {
+			"app-id": "971394191259956"
+		},
+		"uid": 1294
+	}
+}

@@ -3,7 +3,15 @@
 	"plugin-id": "Sprite",
 	"sid": 696338114309805,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "purpleTreeLife",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 492711463982411
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -14,7 +22,7 @@
 						"width": 149,
 						"height": 215,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
@@ -58,6 +66,52 @@
 				],
 				"sid": 618751033180070,
 				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 65,
+						"height": 134,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5686440,
+						"collisionPoly": {
+							"points": [
+								0.35384615384615387,
+								0.022388059701492536,
+								0.8153846153846154,
+								0.08208955223880597,
+								0.9384615384615385,
+								0.15671641791044777,
+								0.9846153846153847,
+								0.3880597014925373,
+								0.7538461538461538,
+								0.9626865671641791,
+								0.7076923076923077,
+								0.9850746268656716,
+								0.6461538461538462,
+								0.9925373134328358,
+								0.5384615384615384,
+								0.9626865671641791,
+								0.015384615384615385,
+								0.44776119402985076
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 451893134758724,
+				"name": "DryTree",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

@@ -1,0 +1,613 @@
+{
+	"name": "menuEventSheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "backMusic",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 323159068175677
+		},
+		{
+			"eventType": "variable",
+			"name": "sounds",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 425023729991340
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Facebook Single Sign On",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 843275668588849,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "facebookButtons"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log-in",
+							"objectClass": "Facebook",
+							"sid": 305972378527386,
+							"parameters": {
+								"permissions": "\"public_profile\""
+							}
+						}
+					],
+					"sid": 703724795239869
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-user-logged-in",
+							"objectClass": "Facebook",
+							"sid": 355676555781761
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 657340442789114,
+							"parameters": {
+								"text": "\"Welcome \"&Facebook.FullName&\" !\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Text",
+							"sid": 765134106382584,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 682062660723091,
+							"parameters": {
+								"layer": "\"loginLayer\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 152484667962931,
+							"parameters": {
+								"layer": "\"logoutLayer\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 827868467027947
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 503057062054407,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "logoutSprite"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log-out",
+							"objectClass": "Facebook",
+							"sid": 311443300139185
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 523750947464724,
+							"parameters": {
+								"text": "\"Logout succesful !\""
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 501164781611686,
+							"parameters": {
+								"layer": "\"loginLayer\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 277258689185161,
+							"parameters": {
+								"layer": "\"logoutLayer\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 914996365075333,
+							"parameters": {
+								"seconds": "3"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Text",
+							"sid": 393388237126743,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 438678782087444
+				}
+			],
+			"sid": 397622137728854
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 163259795832577
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Text",
+					"sid": 997842295717942,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 802673991240249,
+					"parameters": {
+						"layer": "\"logoutLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 268258812967984,
+					"parameters": {
+						"layer": "\"creditsLayer\"",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 540015556314631,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 720599766827838,
+							"parameters": {
+								"variable": "backMusic"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 722188855202140,
+							"parameters": {
+								"audio-file": "backgroundMusic",
+								"loop": "looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"bgMusic\""
+							}
+						}
+					],
+					"sid": 293167735987506
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 923499030281748
+						}
+					],
+					"actions": [
+						{
+							"id": "set-muted",
+							"objectClass": "Audio",
+							"sid": 299661376135860,
+							"parameters": {
+								"tag": "\"bgMusic\"",
+								"state": "muted"
+							}
+						}
+					],
+					"sid": 745223676507385
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 714373230645037,
+							"parameters": {
+								"variable": "sounds"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 744968327793542
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 569488067919907
+						}
+					],
+					"actions": [],
+					"sid": 915960847208606
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 121521069019506,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "play"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 292696149754207,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 126479256477080
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 126358570851208,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "sound"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 409160620923212,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 621971268063113,
+							"parameters": {
+								"variable": "backMusic"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 272573264510249,
+							"parameters": {
+								"variable": "backMusic",
+								"value": "false"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 722207883030429,
+							"parameters": {
+								"tag": "\"bgMusic\""
+							}
+						}
+					],
+					"sid": 410855488418726
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 286828962862429
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 213482934767326,
+							"parameters": {
+								"variable": "backMusic",
+								"value": "true"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 229581228831530,
+							"parameters": {
+								"audio-file": "backgroundMusic",
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"bgMusic\""
+							}
+						}
+					],
+					"sid": 308085829775033
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 193395476850437,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "misic"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 778439467635495,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 556443811907125,
+							"parameters": {
+								"variable": "sounds"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 226723534904089,
+							"parameters": {
+								"variable": "sounds",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 193677110066615
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 353173563541163
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 144956801845074,
+							"parameters": {
+								"variable": "sounds",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 789427778378849
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 225354071542736,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "about"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 258833770147033,
+					"parameters": {
+						"layer": "\"creditsLayer\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 893250922449633,
+					"parameters": {
+						"layer": "\"loginTextLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 667896005606668,
+					"parameters": {
+						"layer": "\"logoutLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 851547473126171,
+					"parameters": {
+						"layer": "\"loginLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 512878877454863,
+					"parameters": {
+						"layer": "\"buttonsLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 945408149284814,
+					"parameters": {
+						"layer": "\"opacityLayer\"",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 497520999980391
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 669840074738703,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 798133362511315,
+					"parameters": {
+						"object": "levelSelectBackground"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 972740820484412,
+					"parameters": {
+						"layer": "\"creditsLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 888737447769368,
+					"parameters": {
+						"layer": "\"loginTextLayer\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 783847969699808,
+					"parameters": {
+						"layer": "\"logoutLayer\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 302718612304851,
+					"parameters": {
+						"layer": "\"loginLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 161047005063746,
+					"parameters": {
+						"layer": "\"buttonsLayer\"",
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 253917345776075
+		}
+	],
+	"sid": 198281005925255
+}
